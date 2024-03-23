@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+
+    <h1>HII SUBHA</h1>
+
+
+    <script>
+    //   function in javascript
+    
+// q-1 - what is function declaration
+    // function square(num){
+        //     return num * num;
+        // }
+        
+ // q-2 - what is function expression
+        // const square = function (num){   
+            //      return num * num;
+            // }
+            // console.log(square(5))
+            
+ // q- 3 -what is first class function
+
+//   function square(num){
+
+//     return num * num;
+//   }
+
+//   function  displaySquare(fn) {
+//     console.log("square is " + fn(5));
+//   }
+
+//   displaySquare(square);
+
+
+// q-4  - what is IIFE ?
+// function square(sum){
+//     console.log ( sum * sum);
+// }
+// square(5);
+
+
+// (function square(num) {
+//   console.log(num * num);
+// })(7);
+
+// // Eg-2
+// (function (x) {
+//   return (function (y) {
+//     console.log(x);
+//   })(2);
+// })(1);
+
+
+
+// // Question 3 : Closure
+
+// function init() {
+//   var name = "Mozilla"; // name is a local variable created by init
+//   function displayName() {
+//     // displayName() is the inner function, that forms the closure
+//     console.log(name); // use variable declared in the parent function
+//   }
+//   displayName();
+// }
+// init();
+
+
+
+// // Question 4 : Function Scope
+
+// // Q-1
+// var num1 = 20,
+//   num2 = 3,
+//   name = "Roadsidecoder";
+
+// function mul() {
+//   return num1 * num2;
+// }
+// mul();
+// function getScore() {
+//   var num1 = 3,
+//     num2 = 4;
+//   function add() {
+//     return name + " scored " + (num1 + num2);
+//   }
+//   return add();
+// }
+// getScore();
+
+// function scope
+
+// for (let i=0; i< 5 ; i++){
+//     setTimeout(function(){
+//         console.log(i);
+//     } , i * 1000);
+// }
+
+// 9- function hoisting -o/p based function
+
+// var x=21;
+
+// var fun = function (){
+//     console.lg(x);
+
+//     var x=20;
+
+// };
+
+// fun();
+
+// q-10  parameter & arguments
+
+// function square(num){   //parameter 
+    // console.log(num * num);
+// }
+
+// square(5); arguments
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
