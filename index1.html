@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+
+    <h1>hello gita</h1>
+    <script>
+        // map filter and reduce
+
+        // what is map
+        // const nums=[1,2,3,4,];
+
+        // const multipication = nums.map((num, i , arr)=>{
+        //     return num*5 +i ;
+        // })
+        
+        // console.log(multipication);
+        
+        // Filter
+        
+        // const nums= [1,2,3,4,5];
+        
+        // const  morethan = nums.filter((num) =>{
+            //     return num > 3
+            // })
+            
+            // console.log(morethan);
+            
+            
+            // reduce
+            // const nums=[1,2,3,4,5]
+            // const sum = nums.reduce(( acc , curr , i , arr ) =>{
+            //     return acc+curr;
+            // }, 70);
+            
+            // console.log(sum);
+            
+            // polifill for map()
+
+                        
+            // array.prototype.myMap = function (cb) {
+            //     let temp= [];
+                
+            //     for(let i=0; i<this.length; i++){
+            //         temp.push(cb(this[i], i, this));
+            //     }
+                
+            //     return temp;
+            // }
+            
+            // const nums=[1,2,3,4,];
+        
+            // const multipication = nums.myMap((num, i , arr)=>{
+            //     return num*5 +i ;
+            // })
+
+
+
+            // polyfill for filter
+
+//         array.prototype.myFilter = function (cb){
+//             let temp=[];
+//             for(let i =0; i<this.length; i++){
+//                 if(cb(this[i], i, this)){
+//                     temp.push(this[i]);
+//                 }
+//             }
+//         }
+// const nums =[1,2,3,4];
+
+// const morethan = nums.myFilter((num) =>{
+//     return num > 3 ;
+// });
+
+// console.log(morethan);
+
+// polyfil for reduce
+// arr.reduce((acc, curr , i, arr)=>{}, initialvalue)
+
+
+// Array.prototype.myReduce = function ( cb, initialvalue) {
+//     var accumulator = initialvalue;
+
+//     for(let i=0 ; i<this.length;i++){
+//         accumulator = accumulator ? cb(accumulator, this[i] , i , this ): this[i];
+//     }
+
+//     return accumulator;
+// };
+
+// const nums = [1,2,3,4];
+
+// const sum = nums .myReduce((acc, curr , i , arr)=>{
+//     return acc+curr;
+// } , 0);
+
+// console.log(sum);
+
+
+// que-1 = return only name  of  students in capital
+
+// que-2 -> return more than 60 marks  & rollnumber greater than 15
+// que -3 -> return more than 60 marks & roll number greater than 15
+// que ->4 sum of marks of all students
+// que->5 only names of students who scored  more than 60
+// que-> 6 return total marks for students with marks greater than 60 after 20 marks  have been added to those who scored less than 60 
+let students =[
+    {name:"piyushi" , rollNumber : 31 , marks:80},
+    {name:"Jenny" , rollNumber : 15 , marks:69},
+    {name:"kushal" , rollNumber : 16 , marks:35},
+    {name:"piyushi" , rollNumber : 7 , marks:55}
+]
+
+// const names = students.map((stu) => stu.name.toUpperCase());
+// console.log(names);
+
+// const details = students.filter((stu) =>  stu.marks > 60);
+// console.log(details);
+
+// const details = students.filter((stu) => stu.marks > 60 && stu.rollNumber > 15)
+// console.log(details);
+
+// const sum = students.reduce((acc, curr) => acc + curr .marks , 0);
+// console.log(sum);
+
+// const names = students.filter ((stu) => stu.marks > 60).map((stu) => stu.name);
+// console.log(names);
+
+
+const  totalmarks = students.map((stu) => {
+    if(stu.marks < 60){
+         stu.marks += 20;
+    }
+    
+    return stu;
+
+}).filter((stu) => stu.marks > 60)
+.reduce((acc, curr) => acc + curr.marks, 0)
+
+console.log(totalmarks);
+
+    
+    
+    </script>
+
+</body>
+</html>
