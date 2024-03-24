@@ -34,24 +34,49 @@
     // }
 
     // what is Closure ?
-     
-    function makeFunc(){
-        var name = "Mozilla";
+    // Q->1
 
-        function displayname(){
-            console.log(name);
-        }
-        return displayname;
-    }
-    var  myFunc = makeFunc();
+    // function makeFunc(){
+    //     var name = "Mozilla";
 
-    myFunc()
+    //     function displayname(){
+    //         console.log(name);
+    //     }
+    //     return displayname;
+    // }
+    // var  myFunc = makeFunc();
 
+    // myFunc()
 
+        //q->2
+    // var username = "piyush" ;
+    // function makeFunc(){
+    //     var name = "Mozilla"; // outer scope 
 
+    //     function displayname( num){ //local scope
+    //         console.log(name , num , username);
+    //     }
+    //     return displayname;
+    // }
+    // makeFunc()(5);
 
+    // q->3
+     // global scope
+//     var e=10;
+//     function  sum(a){
+//      return function(b){
+//         // function scope
+//       return function (c){
+//      return function (d){
+//         // local scope
+//      return a+b+c+d+e;
 
+//                 };
+//             };
+//         };
+//     };
 
+// console.log(sum (1) (2) (3) (4) );
 
 
     </script>
