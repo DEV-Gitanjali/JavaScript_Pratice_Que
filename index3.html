@@ -11,15 +11,48 @@
 // Closure in javascript
 // lexical scope
 
-    var username = "RoadsideCoder";
-    // global scope
-    function local(){
-        // local scope
+    // var username = "RoadsideCoder";
+    // // global scope
+    // function local(){
+    //     // local scope
 
-        console.log(username)
-    }
+    //     console.log(username)
+    // }
     
-    local();
+    // local();
+
+    // what is closure
+     //global scope 
+    // function subscribe(){
+    //     var name = "Roadsider Coder";
+    //     // inner scope 2
+    //     function displayName(){
+    //       //inner scope 
+    //         alert(name);
+    //     }
+    //     displayName();
+    // }
+
+    // what is Closure ?
+     
+    function makeFunc(){
+        var name = "Mozilla";
+
+        function displayname(){
+            console.log(name);
+        }
+        return displayname;
+    }
+    var  myFunc = makeFunc();
+
+    myFunc()
+
+
+
+
+
+
+
 
     </script>
 </body>
