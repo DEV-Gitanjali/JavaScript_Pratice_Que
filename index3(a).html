@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Closure question</title>
+</head>
+<body>
+    <h2>good morning</h2>
+    <script>
+        // Q->1 : What will be logged to console
+
+        // let count = 0;
+        // (function printCount(){
+
+        //     if(count === 0){
+        //         let count = 1; // shadowing
+        //         console.log(count);
+        //     }
+        //     // count =0
+        //     console.log(count);
+
+        // })();
+
+
+        // que-2 write a function that would alow you to do this
+
+        // function createbase(num){
+        //     return  function (innerNum){
+        //         console.log(innerNum + num);
+        //     }
+        // }
+
+        // var addSix = createbase(6);
+        // addSix(10);
+        // addSix(15);
+
+        // que-> 3 time optimization
+
+        //  function find(){
+        //     let a=[];
+        //     for(let i=0;i<1000000000;i++){
+        //         a[i] =  i * i ;
+
+        //     }
+
+        //     return function (index){
+        //         console.log(a[index]);
+        //     };
+        //  }
+
+        //  const closure =find();
+        //  console.time("6");
+
+        //  console.log(6);
+        //  console.timeEnd("6");
+        //  console.time("50");
+        //  closure(50);
+
+
+    // q->(4) 
+    function a(){
+        for(var i=0; i<3 ; i++){
+            setTimeout(function(){
+                console.log(i);
+            } , i * 1000);
+        }
+    }
+    
+    // 3
+    // 3
+    // 3
+    a();
+
+
+
+
+
+
+    </script>
+</body>
+</html>
