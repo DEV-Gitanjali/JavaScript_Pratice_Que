@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currying</title>
+</head>
+<body>
+    <h2 >hello gitu , <br> have a good day</h2>
+
+    <script>
+        // curring in javascript
+
+        // question-1
+
+    //     function sum(a,b,c){
+    //         return  a + b + c;
+    //     }
+    // console.log(sum(2,6,1))
+
+    function sum(a){
+        return function(b){
+            return function(c){
+                return a + b + c;
+            };
+        };
+    };
+
+    console.log(sum(2)(6)(1));
+
+
+     
+
+    </script>
+    
+</body>
+</html> 

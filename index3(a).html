@@ -172,26 +172,63 @@
 
 // Q->(8) once polyfill
 
-function once(func , context){
-    let ran;
+// function once(func , context){
+//     let ran;
 
-    return  function(){
-        if(func){
-            ran = func.apply(context || this , arguments);
-            func = null;
+//     return  function(){
+//         if(func){
+//             ran = func.apply(context || this , arguments);
+//             func = null;
+//         }
+
+//         return ran;
+//     }
+// }
+
+// const hello =once((a,b)=> console.log("hello" , a,b));
+
+// hello(1,2);
+// hello();
+// hello();
+
+
+// Ques ->9 : Memorize polyfill
+
+function myMemorize(fn, context){
+    const res = {};
+
+    return function (...args){
+        var argCache = JSON.stringify(...args);
+
+        if(!res[argCache]){
+            res[argCache] = fn.call(context || this , ...args);
         }
 
-        return ran;
+        return res[argCache];
+    
     }
 }
 
-const hello =once((a,b)=> console.log("hello" , a,b));
 
-hello(1,2);
-hello();
-hello();
+const clumsysquare = (num1, num2) => {
+    for(let i=1; i<= 100000000; i++){}
+
+    return num1 * num2;
+}
 
 
-    </script>
+const memorizedClumsysquare = myMemorize(clumsysquare);
+   
+  console.time("First call");
+  console.log(clumsysquare( 9467 , 7649));
+  console.timeEnd("First call");
+
+  console.time("Second call");
+  console.log(clumsysquare( 9467 , 7649));
+  console.timeEnd("Second call");
+
+//   que-10 what is different between closure  & scope
+
+</script>
 </body>
 </html>
