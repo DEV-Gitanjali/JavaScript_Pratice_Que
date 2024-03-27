@@ -6,10 +6,11 @@
     <title>Currying</title>
 </head>
 <body>
-    <h2 >hello gitu , <br> have a good day</h2>
+    <h2 id="heading">hello gitu , <br> have a good day</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptate ducimus suscipit, dignissimos architecto odio corporis vel porro dolorem. Facere.</p>
 
     <script>
-        // curring in javascript
+        // curring in javascript 
 
         // question-1
 
@@ -65,7 +66,45 @@
     
     //   console.log(add(5)(2)(4)(8)());
 
+
+    // que->4  currying vs partial application
+
+    // partial function
+    // function sum(a){
+    //     return  function(b,c){
+    //         return a + b + c;
+    //     }
+    // }
+
+    // const x= sum(10);
+    // console.log(x(3,4));
+    // or
+    // console.log(sum(20)(1,4));
+
+    // currying application
+
+    // function sum(a){
+    //     return function(b,){
+    //         return function(c){
+    //             return a + b + c;
+    //         };
+    //     };
+    // };
       
+    // console.log(sum(20)(1)(4));
+
+    // Q->5 manipulating DOM
+
+    function updateElementText(id){
+        return function(content){
+            document.querySelector("#" + id).textContent = content;
+        };
+    }
+        const updateHeader = updateElementText("heading");
+  
+    updateHeader("good morning everyone");
+
+
 
     </script>
     
