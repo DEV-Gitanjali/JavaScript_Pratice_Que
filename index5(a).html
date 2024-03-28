@@ -71,6 +71,132 @@
 
             // que-> 7 what's the output
 
+            // const settings ={
+            //     username:"piyush",
+            //     level:19,
+            //     health:90,
+            // };
+
+            // const data = JSON.stringify(settings, ["level" , "health"])
+            // console.log(data);
+
+            //  que-> 8
+
+            // const shape ={
+            //     radius:10,
+            //     diameter(){
+            //         return this.radius * 2;
+            //     } ,
+            //     perimeter:() => 2* Math.PI * this.radius,
+
+            // };
+
+            // console.log(shape.diameter());
+            // console.log(shape.perimeter());
+
+            // que-> what is destructuring in objects ?
+
+            // let user = {
+            //     name:"piyush" , 
+            //     age:24,
+
+            //     fullname: {
+            //         first:"Subhamgitanjali" ,
+            //         last: "pradhan",
+            //     },
+            // };
+
+            // const {name} = user;
+            // console.log(name);
+
+            // const name ="roadside coder";
+            // const {name:myname} = user;
+            // console.log(myname);
+
+            // const {fullname :{first},} = user;
+            // console.log(first);
+
+            // question-10 > what the output
+            // function getItem(fruitList , favoriteFruit , ...args){
+            //     return [...fruitList , ...args , favoriteFruit]
+            // }
+
+            // console.log(getItem(["banana" , "apple"] , "pear" , "orange"))
+
+            // question ->11 what the output
+
+            // let c = {greeting: "hey!"};
+            // let d;
+
+            // d=c;
+            // c.greeting= "hello" ;
+
+            // console.log(d.greeting);
+
+            // que-> 12 what the output
+            // console.log({a:1} == {a:1});
+            // console.log({a:1} === {a:1});
+
+            // que-13 what the output
+            // let person = {name :"subham"};
+            // const numbers = [person];
+            // person = null;
+            // person.name = null;
+            // console.log(numbers);
+
+            // que->14 what the output
+
+            // const value = {number:10}
+
+            // const multiply = (x = {...value}) => {
+            //     console.log((x.number *= 2));
+            // }
+            // multiply();
+            // multiply();
+            // multiply(value);
+            // multiply(value);
+
+            // que-> 15   what the output
+
+            // function changeAgeAndReference(person){
+            //     person.age = 25;
+            //     person={
+            //         name:"john" ,
+            //         age:25,
+            //     };
+            //     return person;
+            // }
+       
+            // const personObj1 = {
+            //     name:"Alex",
+            //     age: 30,
+
+            // };
+
+            // que-> 16 what is shallow copy & deep copy ?
+
+            let user = {
+                name:"Roadsider Coder" ,
+                age:24,
+            };
+
+            // const objClone = Object.assign ({} , user);
+            // console.log(user , objClone);
+
+            // const objClone = JSON.parse(JSON.stringify(user));
+             const objClone = {...user};
+            objClone.name = "piyush";
+            console.log(user , objClone);
+
+
+            
+
+
+
+
+            
+            
+
             
 
 
