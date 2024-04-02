@@ -11,19 +11,53 @@
         // this keyword in javascrtipt (implicit binding)
         // explain "this" keyword ?
 
-        class user{
-            constructor(n){
-                this.name = n ;
+        // class user{
+        //     constructor(n){
+        //         this.name = n ;
 
-            }
+        //     }
 
-            getname(){
-                console.log(this.name);
-            }
-        }
+        //     getname(){
+        //         console.log(this.name);
+        //     }
+        // }
  
-        const User = new user("gitu");
-        User.getname();
+        // const User = new user("gitu");
+        // User.getname();
+
+        // que-1  what is the output
+
+    //     const user ={
+    //         firstName : "piyush!" ,
+    //    getName(){
+    //      const firstName = "piyush agarwal !";
+
+    //   return this.firstName;
+    //     },
+
+    //     };
+
+    //     console.log(user.getName());
+
+    // que-2 
+
+    function makeUser(){
+        return {
+            name:"subham",
+            age:22 ,
+            
+            ref(){
+                return this;
+            },
+        };
+    }
+
+    let user = makeUser();
+
+    console.log(user.ref().name);
+
+
+
     </script>
 </body>
 </html>
