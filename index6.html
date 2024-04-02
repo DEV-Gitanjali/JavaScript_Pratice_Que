@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This keyword</title>
+</head>
+<body>
+    <h1>GOOD AFTER NOON</h1>
+    <script>
+        // this keyword in javascrtipt (implicit binding)
+        // explain "this" keyword ?
+
+        class user{
+            constructor(n){
+                this.name = n ;
+
+            }
+
+            getname(){
+                console.log(this.name);
+            }
+        }
+ 
+        const User = new user("gitu");
+        User.getname();
+    </script>
+</body>
+</html>
