@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call , bind , apply</title>
+</head>
+<body>
+    <h1>hello coding world</h1>
+
+    <script>
+        //call ,bind , apply in javasccript (Explicit binding)
+        // que-1 what is call ?
+
+        var obj = {name: "subham"};
+
+        function sayHello(age, profession){
+            return "hello" +  " " + this.name  + "is" + " " + age  + "and is a " + profession;
+        }
+        console.log(sayHello.call(obj , 22 , "software Engineer"));
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
