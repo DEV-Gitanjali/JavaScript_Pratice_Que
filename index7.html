@@ -132,15 +132,38 @@
     // user.g();
 
     // que->11 bind chainging
-    function f(){
-        console.log(this.name);
+    // function f(){
+    //     console.log(this.name);
 
+    // }
+
+    // f=f.bind({name:"John"}) .bind({name:"Ahn"});
+
+    // f();
+
+    // que->12 
+
+    function checkPassword (success, failed){
+        let password = prompt("password ?" , "" );
+
+        if(password== "Roadside Coder" ) success();
+        else failed();
     }
 
-    f=f.bind({name:"John"}) .bind({name:"Ahn"});
 
-    f();
+    let user ={
+        name:"piyush Agarwal",
 
+        loginSucessful(){
+            console.log(`${this.name} logged in`);
+        },
+
+        loginFailed(){
+            console.log(`${this.name} login failed`);
+        }
+    };
+
+    checkPassword(user.loginSucessful.bind(user), user.loginFailed.bind(user));
 
 
 
