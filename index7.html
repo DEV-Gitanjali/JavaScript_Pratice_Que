@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>hello coding world</h1>
+    <p>subham ❤️</p>
 
     <script>
         //call ,bind , apply in javasccript (Explicit binding)
@@ -26,6 +27,105 @@
         //     return "hello" +  " " + this.name  + "is" + " " + age  + "and is a " + profession;
         // }
         // console.log(sayHello.apply(obj , [22 , "software Engineer"]));
+
+
+        // var obj = {name: "subham"};
+
+        // function sayHello(age, profession){
+        //     return "hello" +  " " + this.name  + "is" + " " + age  + "and is a " + profession;
+        // }
+
+        // const bindfunc = sayHello.bind(obj);
+        // console.log(bindfunc(22 , "software Engineer"));
+        // console.log(bindfunc(39 , "youtuber"));
+
+
+        // que-> 4 output based question
+
+        // const person = {name: "piyushi"};
+
+        // function sayHii(age){
+        //     return `${this.name}  is ${age}`
+        // }
+
+        // console.log(sayHii.call(person , 24));
+        // console.log(sayHii.bind(person , 24));
+
+
+        //que-> 5 call with function inside object
+
+        // const age = 10;
+        // var person = {name: "piyushi",
+        //   age: 20, 
+        //   getAge: function(){
+        //     return this.age;
+        //   },
+        // };
+
+        // var person2 = {age : 24};
+        // console.log(person.getAge.call(person2));
+
+        // que->6 what is the output ?
+
+        // var status = "smile";
+
+        // setTimeout(()=> {
+        //     const status = "smileheart";
+
+        //     const data = {
+        //         status: "avocado",
+        //         getstatus(){
+        //             return this.status;
+        //         },
+
+        //     };
+
+        //     console.log(data .getstatus()));
+        //     console.log(data.getstatus.call(this));
+        // } , 0);
+      
+        //que -> 7 call printanimals such that it prints all animal
+
+        // const animals = [
+        //     {species:"lion" , name:"king"} ,
+        //     {species:"lion" , name:"king"}
+        // ]
+
+        // function printanimals(i){
+        //     this.print = function(){
+        //         console.log("#" + i + " " + this.species + " :"  + this.name);
+        //     };
+
+        //     this.print();
+        // }
+
+        // for(let i= 0; i<animals.length; i++){
+        //     printanimals.call(animals[i] , i);
+        // }
+
+        // question 8-Append an array to another array
+
+        const array = ["A" , "B" , "C"];
+        const elements = [0, 1,2];
+
+        array.push.apply(array, elements);
+        console.log(array);
+
+        // question 9 -using apply to enhance Built-in functions
+        // find min/max number in an array
+
+        const numbers = [5,6,7,8,9,3];
+        console.log(Math.max.apply(null,numbers));
+        console.log(Math.min.apply(null,numbers));
+
+    
+
+
+
+
+
+        
+     
 
 
 
