@@ -120,17 +120,26 @@
 
     //   que->10 bound function
 
+    // function f(){
+    //     console.log(this);
+    // }
+
+    // let user ={
+    //     g:f.bind(null),
+
+    // };
+
+    // user.g();
+
+    // que->11 bind chainging
     function f(){
-        console.log(this);
+        console.log(this.name);
+
     }
 
-    let user ={
-        g:f.bind(null),
+    f=f.bind({name:"John"}) .bind({name:"Ahn"});
 
-    };
-
-    user.g();
-
+    f();
 
 
 
