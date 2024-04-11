@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promises in javascript
+        //synchronous vs Asynchronous  code
+      //Async
+
+    //   console.log("subham");
+
+    //   setTimeout(()=>{
+    //     console.log("shreyansh");
+    //   } , 1000);
+
+    //   console.log("gitu");
+
+    // Asnychronous Example
+// console.log("start")
+
+// function importantAction(username) {
+//     setTimeout(() => {
+//       return `Subscribe to ${username}`;
+//     }, 1000);
+//   }
+
+// const message = importantAction('Roadside Coder');
+// console.log(message);
+
+// console.log("stop");
+
+
+// Callback
+
+// console.log("start")
+
+// function importantAction(username, cb) {
+//   setTimeout(() => {
+//     cb( `Subscribe to ${username}`);
+//   }, 1000);
+// }
+
+// importantAction("Roadside Coder", (message) => {
+//   console.log(message);
+// });
+
+// console.log("stop")
+
+
+// Callback Hell
+// console.log("start")
+
+// function importantAction(username, cb) {
+//   setTimeout(() => {
+//     cb(`Subscribe to ${username}`);
+//   }, 1000);
+// }
+
+// function likeTheVideo(video, cb) {
+//   setTimeout(() => {
+//     cb(`Like the ${video} video`);
+//   }, 1000);
+// }
+
+// function shareTheVideo(video, cb) {
+//   setTimeout(() => {
+//     cb(`Share the ${video} video`);
+//   }, 1000);
+// }
+
+// const message = importantAction("Roadside Coder", (message) => {
+//   console.log(message);
+//   likeTheVideo("Javascript Interview Questions", (action) => {
+//     console.log(action);
+//     shareTheVideo("Javascript Interview Questions", (action) => {
+//         console.log(action);
+//       });
+//   });
+// }); 
+
+// console.log("stop")
+
+
+// Promises
+
+//  console.log("start");
+
+//  const sub = new Promise((resolve, reject) => {
+
+//     setTimeout(()=>{
+//       const result = true;
+//       if(result) resolve("subscribed to Roadsider coder");
+//       else reject(new Error("not subscribed to Roadsider coder"));
+//     },5000)
+
+//  });
+
+//  sub.then((res) => {
+//    console.log(res);
+//  }).catch((err) => {
+//    console.error(err);
+//  });
+
+//  console.log("stop");
+
+
+// promise que-2
+
+// console.log("start");
+
+// const sub = promise.resolve("subscribed to roadside coder");
+// console.log(sub);
+// sub.then((res)=> console.log(res)).catch((err)=> console.log("error",err));
+
+// console.log("stop");
+
+
+
+
+    </script>
+</body>
+</html>
