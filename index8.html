@@ -176,7 +176,7 @@ importantAction("Roadside Coder")
   
   // promise.all
   
-    promise.all([
+    Promise.all([
       importantAction("Roadside Coder"),
       likeTheVideo("Javascript Interview Questions"),
       shareTheVideo("Javascript Interview Questions"),
@@ -190,7 +190,24 @@ importantAction("Roadside Coder")
     
     console.log("stop");
 
+
+    Promise.race([
+      importantAction("Roadside Coder"),
+      likeTheVideo("Javascript Interview Questions"),
+      shareTheVideo("Javascript Interview Questions"),
+    ])
+    .then((res)=>{
+      console.log(res);
+    })
+    .catch((err)=>{
+      console.error( "promises failed" ,err);
+    });
     
+    console.log("stop");
+
+
+
+
 
 
 
