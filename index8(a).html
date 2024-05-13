@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise interview question</title>
+</head>
+<body>
+    <script>
+        // que->1 what the output
+    //  console.log("start")
+    //     const promise1 = new Promise((resolve, reject) => {
+    //         console.log(1);
+    //         resolve(2);
+    //         console.log(3);
+    //     });
+
+    //     promise1.then((res)=>{
+    //         console.log(res);
+    //     });
+
+    //     console.log("end");
+
+        // que->2
+    //  console.log("start")
+    //     const promise2 = new Promise((resolve, reject) => {
+    //         console.log(1);
+    //         console.log(3);
+    //     });
+
+    //     promise1.then((res)=>{
+    //         console.log( "result "+ res);
+    //     });
+
+    //     console.log("end");
+  
+    // q- 3 what,s the output
+    //   function job(){
+    //     return new Promise((resolve, reject) => {
+            
+    //         reject( );
+        
+    //     });
+    //   }
+
+    //   let promise = job();
+
+    //   promise
+    //   .then(function(){
+    //     console.log("success 1");
+    //   })
+       
+    //   .then(function(){
+    //     console.log("success 1");
+    //   })
+       
+    //   .then(function(){
+    //     console.log("success 1");
+    //   })
+       
+    //   .then(function(){
+    //     console.log("success 1");
+    //   })
+
+    //   .catch( function () {
+    //   console.log("error 1");
+    //   })
+    //   .then(function(){
+    //     console.log("success 2");
+    //   })
+
+    //   que->4  what is the output
+
+    // function job(state){
+    //     return new Promise((resolve, reject) => {
+
+    //         if(state){
+    //             resolve("sucess");
+    //         } else{
+    //             reject("error");
+    //         }
+           
+    //     });
+    // }
+
+    // let promise = job(true);
+
+    // promise
+    // .then(function(data){
+    //     console.log(data);
+
+    //     return job(false);
+    // })
+    // .catch(function(error){
+    //     console.log(error);
+
+    //     return "Error caught";
+    // })
+    // .then(function(data){
+    //     console.log(data);
+    //     return job(true);
+    // })
+
+    // .catch(function (error){
+    //     console.log(error);
+    // })
+
+//   que->5 
+
+// function job(state) {
+//     return new Promise(function(resolve, reject) {
+//         if (state) {
+//             resolve('success');
+//         } else {
+//             reject('error');
+//         }
+//     });
+// }
+
+// let promise = job(true);
+
+// promise
+// .then(function(data) {
+//     console.log(data);
+
+//     return job(true);
+// })
+// .then(function(data) {
+//     if (data !== 'victory') {
+//         throw 'Defeat';
+//     }
+//     return job(true);
+// })
+// .then(function(data) {
+//     console.log(data);
+// })
+// .catch(function(error) {
+//     console.log(error);
+//     return job(false);
+// })
+// .then(function(data) {
+//     console.log(data);
+//     return job(true);
+// })
+// .catch(function(error) {
+//     console.log(error);
+//     return 'Error caught';
+// })
+// .then(function(data) {
+//     console.log(data);
+//     return new Error('test'); // Not Returning a promise
+// })
+// .then(function(data) {
+//     console.log('Success:', data.message);
+// })
+// .catch(function(data) {
+//     console.log('Error:', data.message);
+// });
+
+
+// que->6  promise chaining
+// const firstPromise = new Promise((resolve, reject) => {
+//     resolve('First!');
+// });
+
+// const secondPromise = new Promise((resolve, reject) => {
+//     resolve(firstPromise);
+// })
+
+// secondPromise
+//     .then(res => res)
+//     .then(res => console.log(res));
+
+
+
+
+    // Que->8 Rewrite  this example coe using async/await  instead of './then/catch'
+
+
+//    async function loadJson(url){
+
+//     let response = await fetch(url);
+
+//     if(response.status==200){
+//         let json = await response.json();
+//         return json;
+//     }
+
+//     throw new Error(response.status);
+
+    
+
+    //     loadJson("https://fakeurl.com/no-such-user .json").catch((err)=>{
+    //         console.log(err);
+    //     })
+    // }
+
+
+    // QUES->9 solve promise Recursively
+
+    function importantAction(usename){
+        return new Promise((resolve, reject)=>{
+           setTimeout(()=>{
+               reject(`Subscribe to ${usename}`);
+           }, 1000);
+        })
+    }
+
+    function linkeTheVideo(usename){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve(`Like the ${usename} video`);
+            }, 1000);
+        })
+    }
+
+    function shareTheVideo(usename){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve(`Share the ${usename} video`);
+            }, 1000);
+        })
+    }
+
+    function promeRecurse(funcPromise){
+        if(funcPromise.length===0)return ;
+
+        const currPromise = funcPromise.shift();
+
+        currPromise
+        .then((res)=>console.log(res)).catch((err)=>console.log(err));
+        
+
+        promeRecurse(funcPromise);
+
+    }
+
+    promeRecurse([
+        importantAction("Roadside Coder"),
+        linkeTheVideo("Javascript interview Questions"),
+        shareTheVideo("Javascript interview Questions"),
+
+    ])
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
