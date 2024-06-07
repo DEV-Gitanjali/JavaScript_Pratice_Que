@@ -42,14 +42,23 @@
 
    var pressedCount =0;
    var  triggerCount = 0;
+   const start = new Date().getTime();
 
-   const debounceCount = _.debounce(()=>{
-    btnCount.innerHTML= ++triggerCount
-   } , 1800)
+  //  const debounceCount = _.debounce(()=>{
+  //   btnCount.innerHTML= ++triggerCount
+  //  } , 1800)
+
+
+  const throttledCount = _.throttle(()=>{
+    const now=new Date().getTime();
+    console.log(now - start);
+    btnCount.innerHTML=++triggerCount
+  } , 800)
 
    btn.addEventListener("click" , ()=>{
     btnPress.innerHTML= ++pressedCount;
-      debounceCount();
+      // debounceCount();
+      throttledCount();
 
    });
 
