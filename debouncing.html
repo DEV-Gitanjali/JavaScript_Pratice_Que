@@ -19,6 +19,7 @@
   
 </head>
 <body>
+
    <h1>
     subscribe to roadside coder <br/>
     else you will have bad dreams today.
@@ -29,8 +30,15 @@
 
    <p>Button Pressed <span class="increment_pressed">0</span> Times</p>
    <p>Triggered <span class="increment_count">0</span>Times</p>
+
+
    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+
+
   <script>
+
     //debouncing throttling in javascript
   // que-1 -create a button ui and debounce as follows 
   //show button pressed <> every times every time button is pressed
@@ -66,33 +74,73 @@
    //que-> create Debounce()polyfill implementation
 
 
+  //  const btn= document.querySelector(".increment_btn")
+  //  const btnPress = document.querySelector(".increment_pressed");
+  //  const btnCount = document.querySelector(".increment_count");
+
+  //  var pressedCount =0;
+  //  var  triggerCount = 0;
+
+  //  const myDebounce = (cb,d)=>{
+  //   let timer ;
+
+  //   return function(...args){
+  //     if(timer) clearTimeout(timer);
+  //     timer = setTimeout(()=>{
+  //       cb(...args);
+
+  //     } , d);
+  //   }
+  //  }
+  //  const debounceCount= myDebounce(()=>{
+  //    triggerCount += 1;
+  //    count.innerHTML=triggerCount;
+  //   }, 800)
+
+  //  btn.addEventListener("click" , ()=>{
+  //   btnPress.innerHTML= ++pressedCount;
+  //     debounceCount();
+      
+
+  //  });
+
+
+  //  que-4 create  throttling  polyfill  implementation javascript 
+
    const btn= document.querySelector(".increment_btn")
    const btnPress = document.querySelector(".increment_pressed");
    const btnCount = document.querySelector(".increment_count");
 
    var pressedCount =0;
    var  triggerCount = 0;
+   const start = new Date().getTime();
 
-   const myDebounce = (cb,d)=>{
-    let timer ;
+   
+   const  myThrottle=( cb , d)=>{
+     let last =0;
 
-    return function(...args){
-      if(timer) clearTimeout(timer);
-      timer = setTimeout(()=>{
-        cb(...args);
-
-      } , d);
-    }
-   }
-   const debounceCount= myDebounce(()=>{
-     triggerCount += 1;
-     count.innerHTML=triggerCount;
-    }, 800)
-
-   btn.addEventListener("click" , ()=>{
-    btnPress.innerHTML= ++pressedCount;
-      debounceCount();
+     return (...args)=>{
+      let now= new Date().getTime();
+      if(now - last < d) return;
+        last = now;
+        return cb(...args);
       
+     };
+   };
+
+   var throttled = myThrottle(()=>{
+    triggerCount +=1;
+    count.innerHTML= triggerCount;
+   } , 1000)
+
+  
+  btn.addEventListener("click" , ()=>{
+    btnPress.innerHTML= pressedCount++;
+    const now=new Date().getTime();
+    const seconds = (now- start ) / 1000;
+    console.log(seconds.toFixed());
+    throttled();
+    
 
    });
 
